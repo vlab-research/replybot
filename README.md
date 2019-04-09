@@ -17,7 +17,7 @@ Now setup minikube and kubectl:
 
 ``` shell
 minikube start
-kubectl use-context minikube
+kubectl config use-context minikube
 ```
 
 Now, initialize helm in you minikube cluster and install Kafka using helm:
@@ -26,6 +26,7 @@ Now, initialize helm in you minikube cluster and install Kafka using helm:
 helm --kube-context minikube init
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 helm --kube-context minikube install --name spinaltap --values kafka-values-dev.yaml incubator/kafka
+helm --kube-context minikube install --name chatroach --values cockroach-dev.yaml stable/cockroachdb
 ```
 
 Run this in the shell you will be using
