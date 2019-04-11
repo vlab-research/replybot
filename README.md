@@ -22,6 +22,8 @@ kubectl config use-context minikube
 
 Now, initialize helm in you minikube cluster and install Kafka using helm:
 
+NOTE: spinaltap chatroach needs to run inside folder devops.
+
 ``` shell
 helm --kube-context minikube init
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
