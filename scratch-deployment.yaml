@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gbv-replybot
+  name: gbv-scratchbot
   labels:
-    app: gbv-replybot
+    app: gbv-scratchbot
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: gbv-replybot
+      app: gbv-scratchbot
   template:
     metadata:
       labels:
-        app: gbv-replybot
+        app: gbv-scratchbot
     spec:
       containers:
-      - name: gbv-replybot
-        image: vlabresearch/replybot:0.0.30
+      - name: gbv-scratchbot
+        image: vlabresearch/replybot:0.0.28
+        args:
+        - node
+        - lib/scratch.js
         resources:
           requests:
             cpu: "50m"
